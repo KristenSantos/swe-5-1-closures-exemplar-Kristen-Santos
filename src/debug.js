@@ -2,18 +2,20 @@
 // Can you make it private using closure?
 
 const createCourse = (topic, instructor) => {
+  // Private array to store student names, encapsulated via closure
+  const students = [];
   return {
     topic,
     instructor,
-    students: [],
     addStudent(name) {
-      this.students.push(name);
+     students.push(name);
     },
     removeStudent(name) {
-      this.students.splice(this.students.indexOf(name), 1);
+      students.splice(students.indexOf(name), 1);
     },
     getStudents() {
-      return this.students;
+      // Return a shallow copy to maintain encapsulation
+      return [...students]
     }
   }
 }

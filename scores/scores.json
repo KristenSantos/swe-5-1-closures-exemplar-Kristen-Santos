@@ -1,30 +1,30 @@
 {
   "testScores": {
     "From Scratch Tests": {
-      "FrScTe1": 0,
-      "FrScTe2": 0,
-      "FrScTe3": 0,
-      "FrScTe4": 0,
-      "FrScTe5": 0,
-      "FrScTe6": 0,
-      "FrScTe7": 0,
-      "FrScTe8": 0,
-      "FrScTe9": 0,
-      "FrScTe10": 0,
-      "FrScTe11": 0,
-      "FrScTe12": 0,
-      "FrScTe13": 0,
-      "FrScTe14": 0,
-      "FrScTe15": 0,
-      "FrScTe16": 0,
-      "FrScTe17": 0,
-      "FrScTe18": 0,
-      "FrScTe19": 0,
-      "FrScTe20": 0
+      "FrScTe1": 1,
+      "FrScTe2": 1,
+      "FrScTe3": 1,
+      "FrScTe4": 1,
+      "FrScTe5": 1,
+      "FrScTe6": 1,
+      "FrScTe7": 1,
+      "FrScTe8": 1,
+      "FrScTe9": 1,
+      "FrScTe10": 1,
+      "FrScTe11": 1,
+      "FrScTe12": 1,
+      "FrScTe13": 1,
+      "FrScTe14": 1,
+      "FrScTe15": 1,
+      "FrScTe16": 1,
+      "FrScTe17": 1,
+      "FrScTe18": 1,
+      "FrScTe19": 1,
+      "FrScTe20": 1
     },
     "Debug Tests": {
       "DeTe1": 1,
-      "DeTe2": 0
+      "DeTe2": 1
     }
   },
   "idToTestNameHash": {
@@ -80,8 +80,8 @@
     "From Scratch Tests makeFriendList.getFriends - is a function that returns an array": "FrScTe9"
   },
   "humanReadable": {
-    "From Scratch Tests": "0/20",
-    "finalTestScore": "FINAL SCORE: 1/22",
-    "Debug Tests": "1/2"
+    "From Scratch Tests": "20/20",
+    "finalTestScore": "FINAL SCORE: 22/22",
+    "Debug Tests": "2/2"
   }
 }
