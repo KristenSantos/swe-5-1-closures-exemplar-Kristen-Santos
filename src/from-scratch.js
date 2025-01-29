@@ -4,7 +4,7 @@ const makeIdFunc = () => {
   let uniqueId = 0;
 
   // Return an inner function (closure) that increments and returns the ID
-  return function () {
+  return () => {
     uniqueId += 1;
     return uniqueId;
   };
@@ -21,14 +21,24 @@ const sumOfMultiples = (arr, factor) => {
   // Return null if the factor is 0, as dividing by zero is undefined
   if (factor === 0) return null;
 
-  // Use reduce to calculate the sum of multiples
-  return arr.reduce((sum, num) => {
-    // Check if the number is a multiple of the factor
+  // This is the "inner function" and factor is the variable in the closure
+  const reduceCallback = (sum, num) => {
+    // If num is a multiple of factor, add it to sum and return 
+    // Otherwise, return the current sum
     return num % factor === 0 ? sum + num : sum;
-  }, 0); // Start the sum at 0
+  }
+
+  // Use reduce to calculate the sum of multiples
+  return arr.reduce(reduceCallback, 0); // Start the sum at 0
 };
 
 /*
+  How is this closure?
+  - When we invoke .reduce(), we will temporarily leave the scope of sumOfMultiples
+  go into the scope of .reduce(). The, reduceCallback function forms a closure around 
+  the factor parameter. Even though we are in `reduce`, the callback maintains its
+  reference to factor
+
   Best Practices:
   - Handle edge cases early, such as `factor === 0`, to avoid unnecessary errors.
   - Use `reduce` for concise and functional style code instead of a loop, ensuring immutability.
@@ -74,13 +84,13 @@ const makeFriendList = () => {
       } else if (friendsList.length === 1) {
         console.log(`${friendsList[0]} is your friend.`);
       } else if (friendsList.length === 2) {
-        console.log(
-          `${friendsList[0]} and ${friendsList[1]} are your friends.`
-        );
+        console.log(`${friendsList[0]} and ${friendsList[1]} are your friends.`);
       } else {
+        // Join all but the last friend with commas
+        const friendsWithCommas = friendsList.slice(0, -1).join(", ");
+        // Add the last friend with ", and " and the rest of the sentence.
         const lastFriend = friendsList[friendsList.length - 1];
-        const friends = friendsList.slice(0, -1).join(", ");
-        console.log(`${friends}, and ${lastFriend} are your friends.`);
+        console.log(`${friendsWithCommas}, and ${lastFriend} are your friends.`);
       }
     },
   };
