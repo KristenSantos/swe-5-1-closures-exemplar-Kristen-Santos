@@ -33,11 +33,7 @@ const sumOfMultiples = (arr, factor) => {
 };
 
 /*
-  How is this closure?
-  - When we invoke .reduce(), we will temporarily leave the scope of sumOfMultiples
-  go into the scope of .reduce(). The, reduceCallback function forms a closure around 
-  the factor parameter. Even though we are in `reduce`, the callback maintains its
-  reference to factor
+
 
   Best Practices:
   - Handle edge cases early, such as `factor === 0`, to avoid unnecessary errors.
